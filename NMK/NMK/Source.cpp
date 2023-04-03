@@ -124,10 +124,7 @@ int get_number_of_combinations(int** board, int N, int M) {
 void handle_pos_gen() {
     int N, M, K, chosenPlayer, currPlayerSymbol = 0, combinations = 0;
     scanf_s("%d %d %d %d", &N, &M, &K, &chosenPlayer);
-    if (chosenPlayer == 1)
-        currPlayerSymbol = PLAYER_ONE_SYMBOL;
-    if (chosenPlayer == 2)
-        currPlayerSymbol = PLAYER_TWO_SYMBOL;
+    currPlayerSymbol = returnPlayerSymbol(chosenPlayer);
 
     int** board = new int* [N];
     generate_NMK_board(board, N, M);
